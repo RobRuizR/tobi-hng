@@ -35,8 +35,6 @@ const handleArithmetic = (req, res) => {
     }
   }
 
-  console.log(intx, inty, "values");
-
   const multiplicationIndex = operationType.indexOf("multip"); //checking for possible versions of multiplication in operation type
   const productIndex = operationType.indexOf("product"); //checking for possible instance of product as request to handle multiplication
   const additionIndex = operationType.indexOf("add"); //checking for possible instances to handle addition operation
@@ -71,21 +69,21 @@ const handleArithmetic = (req, res) => {
   //we have our operation_type handling as operator
   let result; //declaring a variable to hold result of computation
   if (operator === "multiplication") {
-    result = intx * inty;
+    result = parseInt(intx) * parseInt(inty);
     return res.status(201).json({
       slackUsername: "Intuneteq",
       operation_type: operator,
       result: result,
     });
   } else if (operator === "addition") {
-    result = intx + inty;
+    result = parseInt(intx) + parseInt(inty);
     return res.status(201).json({
       slackUsername: "Intuneteq",
       operation_type: operator,
       result: result,
     });
   } else {
-    result = intx - inty;
+    result = parseInt(intx) - parseInt(inty);
     return res.status(201).json({
       slackUsername: "Intuneteq",
       operation_type: operator,
