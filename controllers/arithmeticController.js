@@ -33,7 +33,12 @@ const handleArithmetic = (req, res) => {
       intx = probableNum[0];
       inty = probableNum[1];
     }
+  } else {
+    intx = x;
+    inty = y;
   }
+
+  console.log(intx, inty);
 
   const multiplicationIndex = operationType.indexOf("multip"); //checking for possible versions of multiplication in operation type
   const productIndex = operationType.indexOf("product"); //checking for possible instance of product as request to handle multiplication
