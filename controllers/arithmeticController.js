@@ -75,21 +75,21 @@ const handleArithmetic = (req, res) => {
   let result; //declaring a variable to hold result of computation
   if (operator === "multiplication") {
     result = parseInt(intx) * parseInt(inty);
-    return res.status(201).json({
+    return res.status(200).json({
       slackUsername: "Intuneteq",
       operation_type: operator,
       result: result,
     });
   } else if (operator === "addition") {
     result = parseInt(intx) + parseInt(inty);
-    return res.status(201).json({
+    return res.status(200).json({
       slackUsername: "Intuneteq",
       operation_type: operator,
       result: result,
     });
   } else {
     result = parseInt(intx) - parseInt(inty);
-    return res.status(201).json({
+    return res.status(200).json({
       slackUsername: "Intuneteq",
       operation_type: operator,
       result: result,
